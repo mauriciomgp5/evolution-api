@@ -26,8 +26,8 @@ services:
       redis-server --port 6379 --appendonly yes
     volumes:
       - evolution_redis:/data
-    ports:
-      - 6379:6379
+    # ports:
+    #   - 6379:6379
 
   postgres:
     container_name: postgres
@@ -45,8 +45,8 @@ services:
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    expose:
-      - 5432
+    # expose:
+    #   - 5432
 
 volumes:
   evolution_instances:
